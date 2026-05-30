@@ -1,0 +1,35 @@
+# ── Web framework ─────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# ── Database ───────────────────────────────────────────────────
+sqlalchemy==2.0.36
+asyncpg==0.30.0          # async PostgreSQL driver
+alembic==1.14.0          # migrations
+
+# ── HTTP + scraping ────────────────────────────────────────────
+httpx==0.28.1
+beautifulsoup4==4.12.3
+lxml==5.3.0
+
+# ── AI / LLM ──────────────────────────────────────────────────
+groq==0.13.0
+langchain==0.3.9
+langchain-groq==0.2.3
+langgraph==0.2.56
+sentence-transformers==2.7.0
+
+# ── Auth ───────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ── Scheduling ────────────────────────────────────────────────
+apscheduler==3.10.4
+
+# ── Config / utilities ────────────────────────────────────────
+python-dotenv==1.0.1
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# ── Future: Playwright for auto-login (Phase 2) ───────────────
+# playwright==1.49.0   # uncomment when adding auto-login
