@@ -26,7 +26,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from groq import Groq
 
-from app.database import get_db, ChatMessage
+from app.database import get_db, ChatMessage, AsyncSessionLocal
 from app.auth.dependencies import get_current_member
 from app.config import settings
 
@@ -104,12 +104,12 @@ async def chat(
 
         # ── 5. Planner: decide + execute agents ───────────────────────
         plan_result = await run_plan(
-            member_id    = member_id,
-            member_data  = member_data,
-            perception   = perception,
-            user_message = user_message,
-            db           = db,
-            role         = role,
+            member_id       = member_id,
+            member_data     = member_data,
+            perception      = perception,
+            user_message    = user_message,
+            session_factory = AsyncSessionLocal,
+            role            = role,
         )
 
         plan_steps        = plan_result["plan_steps"]
